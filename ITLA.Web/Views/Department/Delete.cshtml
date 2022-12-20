@@ -1,0 +1,50 @@
+﻿@model ITLA.Web.Models.Department
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar registro</h1>
+
+<h4>¿Seguro que deseas borrar este registro?</h4>
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartmentID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Budget)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Administrator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Administrator)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

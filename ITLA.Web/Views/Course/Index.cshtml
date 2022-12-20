@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ITLA.Web.Models.Course>
+
+@{
+    ViewData["Title"] = "Asignatura - ITLA";
+}
+
+<h1>Listado de Asignatura</h1>
+
+<p>
+    <a asp-action="Create">Agregar una nueva asignatura</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            if (item.Deleted != true)
+            {
+                <tr>
+                    <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id})
+            </td>
+        </tr>
+        }
+}
+    </tbody>
+</table>
